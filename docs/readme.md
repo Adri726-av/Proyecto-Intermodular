@@ -1,1 +1,1 @@
-Readme docs
+# Documentacion, api.md y pdf corregido
