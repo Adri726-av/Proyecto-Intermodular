@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Componentes · Asignador de mazos</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="componentes.css">
+</head>
+
+<body>
+  <!-- Barra de navegación:
+       sustituye las rutas por las de tu proyecto. -->
+  <nav class="navegacion" aria-label="Navegación principal">
+    <a class="navegacion__marca" href="/">
+      <span class="colores" aria-hidden="true">
+        <span class="mana mana--azul"></span>
+        <span class="mana mana--morado"></span>
+        <span class="mana mana--rojo"></span>
+      </span>
+      Asignador de mazos
+    </a>
+
+    <ul class="navegacion__enlaces">
+      <li>
+        <a class="navegacion__enlace" href="/" aria-current="page">
+          Inicio
+        </a>
+      </li>
+      <li>
+        <a class="navegacion__enlace" href="/administracion">
+          Administración
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="muestra">
+    <section aria-labelledby="titulo-botones">
+      <h2 class="muestra__titulo" id="titulo-botones">Botones</h2>
+      <div class="muestra__grupo">
+        <button class="boton boton--primario" type="button">
+          Botón
+        </button>
+        <button class="boton boton--secundario" type="button">
+          Botón
+        </button>
+      </div>
+    </section>
+
+    <fieldset class="muestra__grupo">
+      <legend class="muestra__titulo">Opciones de respuesta</legend>
+
+      <label class="selector">
+        <input
+          class="selector__input"
+          type="radio"
+          name="respuesta"
+          value="opcion-1"
+        >
+        <span class="opcion">Opción de respuesta</span>
+      </label>
+
+      <label class="selector">
+        <input
+          class="selector__input"
+          type="radio"
+          name="respuesta"
+          value="opcion-2"
+          checked
+        >
+        <span class="opcion">Opción de respuesta</span>
+      </label>
+    </fieldset>
+
+    <fieldset class="muestra__grupo">
+      <legend class="muestra__titulo">Etiquetas de formato</legend>
+
+      <!-- Muestras independientes de ambas variantes. -->
+      <label class="selector">
+        <input
+          class="selector__input"
+          type="checkbox"
+          name="formato-normal"
+          value="commander"
+        >
+        <span class="etiqueta">Commander</span>
+      </label>
+
+      <label class="selector">
+        <input
+          class="selector__input"
+          type="checkbox"
+          name="formato-seleccionado"
+          value="commander"
+          checked
+        >
+        <span class="etiqueta">Commander</span>
+      </label>
+    </fieldset>
+
+    <section aria-labelledby="titulo-aviso">
+      <h2 class="muestra__titulo" id="titulo-aviso">Aviso</h2>
+      <div class="aviso" role="status">
+        Falta 1 pregunta obligatoria
+      </div>
+    </section>
+
+    <section aria-labelledby="titulo-progreso">
+      <h2 class="muestra__titulo" id="titulo-progreso">Progreso</h2>
+
+      <div class="progreso">
+        <div
+          class="progreso__barra"
+          role="progressbar"
+          aria-label="Progreso del cuestionario"
+          aria-valuemin="0"
+          aria-valuemax="8"
+          aria-valuenow="2"
+          aria-describedby="texto-progreso"
+        >
+          <div
+            class="progreso__relleno"
+            style="--avance: 25%"
+          ></div>
+        </div>
+        <p class="progreso__texto" id="texto-progreso">
+          Pregunta 2 de 8 · quedan 6
+        </p>
+      </div>
+    </section>
+
+    <section aria-labelledby="titulo-resultado">
+      <h2 class="muestra__titulo" id="titulo-resultado">
+        Tarjeta de resultado
+      </h2>
+
+      <article class="tarjeta" aria-labelledby="nombre-mazo">
+        <div class="colores" aria-hidden="true">
+          <span class="mana mana--azul"></span>
+          <span class="mana mana--morado"></span>
+        </div>
+        <h3 class="tarjeta__titulo" id="nombre-mazo">
+          Control Azul-Negro
+        </h3>
+        <p class="tarjeta__detalle">Commander · Estilo control</p>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

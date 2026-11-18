@@ -1,0 +1,310 @@
+/* Variables de la guía de estilo */
+    :root {
+      --fondo: #f8f3e9;
+      --superficie: #ffffff;
+      --texto: #272833;
+      --texto-suave: #6b6b78;
+      --borde: #e3dccb;
+      --acento: #e8a545;
+      --acento-claro: #fbebd0;
+      --aviso: #fbe3e1;
+      --mana-azul: #8fb0b8;
+      --mana-verde: #9cc29b;
+      --mana-morado: #b5a0c8;
+      --mana-rojo: #d98a88;
+      --fuente: "Inter", sans-serif;
+      --fuente-titulo: "Poppins", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--fondo);
+      color: var(--texto);
+      font-family: var(--fuente);
+    }
+
+    button, input {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    :where(a, button, input):focus-visible {
+      outline: 3px solid var(--texto);
+      outline-offset: 4px;
+    }
+
+    /* 1. Botón: primario y secundario */
+    .boton {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 350px;
+      max-width: 100%;
+      min-height: 50px;
+      padding: 14px 20px;
+      border: 1.5px solid var(--texto);
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 20px;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .boton--primario {
+      background: var(--texto);
+      color: var(--superficie);
+    }
+
+    .boton--secundario {
+      background: transparent;
+      color: var(--texto);
+    }
+
+    /* Controles nativos accesibles:
+       el estado seleccionado depende de :checked. */
+    .selector {
+      position: relative;
+      display: inline-flex;
+      max-width: 100%;
+      cursor: pointer;
+    }
+
+    .selector__input {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .selector__input:focus-visible + span {
+      outline: 3px solid var(--texto);
+      outline-offset: 4px;
+    }
+
+    /* 2. Opción de respuesta: normal y elegida */
+    .opcion {
+      display: flex;
+      align-items: center;
+      width: 350px;
+      max-width: 100%;
+      min-height: 48px;
+      padding: 12px 14px;
+      border: 1.5px solid var(--borde);
+      border-radius: 12px;
+      background: var(--superficie);
+      color: var(--texto);
+      font-size: 15px;
+      line-height: 20px;
+    }
+
+    .selector__input:checked + .opcion {
+      border-color: var(--acento);
+      background: var(--acento-claro);
+    }
+
+    /* 3. Etiqueta de formato: normal y seleccionada */
+    .etiqueta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 31px;
+      padding: 6px 14px;
+      border: 1.5px solid var(--borde);
+      border-radius: 999px;
+      background: var(--superficie);
+      color: var(--texto);
+      font-size: 13px;
+      line-height: 16px;
+    }
+
+    .selector__input:checked + .etiqueta {
+      border-color: var(--acento);
+      background: var(--acento);
+    }
+
+    /* 4. Aviso */
+    .aviso {
+      display: flex;
+      align-items: center;
+      width: 350px;
+      max-width: 100%;
+      min-height: 40px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      background: var(--aviso);
+      font-size: 13px;
+      line-height: 20px;
+    }
+
+    /* 5. Indicador de progreso */
+    .progreso {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      width: 350px;
+      max-width: 100%;
+      min-height: 30px;
+    }
+
+    .progreso__barra {
+      height: 6px;
+      overflow: hidden;
+      border-radius: 3px;
+      background: var(--borde);
+    }
+
+    .progreso__relleno {
+      width: var(--avance, 0%);
+      height: 100%;
+      background: var(--acento);
+    }
+
+    .progreso__texto {
+      margin: 0;
+      color: var(--texto-suave);
+      font-size: 13px;
+      line-height: 16px;
+    }
+
+    /* Círculos de maná compartidos */
+    .colores {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .mana {
+      display: inline-block;
+      flex: 0 0 auto;
+      width: 16px;
+      height: 16px;
+      border: 1px solid var(--texto-suave);
+      border-radius: 50%;
+    }
+
+    .mana--azul   { background: var(--mana-azul); }
+    .mana--verde  { background: var(--mana-verde); }
+    .mana--morado { background: var(--mana-morado); }
+    .mana--rojo   { background: var(--mana-rojo); }
+
+    /* 6. Tarjeta de resultado */
+    .tarjeta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      width: 350px;
+      max-width: 100%;
+      min-height: 112px;
+      padding: 16px;
+      border: 1px solid var(--borde);
+      border-radius: 14px;
+      background: var(--superficie);
+    }
+
+    .tarjeta__titulo {
+      margin: 0;
+      font-family: var(--fuente-titulo);
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 30px;
+    }
+
+    .tarjeta__detalle {
+      margin: 0;
+      color: var(--texto-suave);
+      font-size: 13px;
+      line-height: 16px;
+    }
+
+    /* 7. Barra de navegación */
+    .navegacion {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      min-height: 64px;
+      padding: 16px 48px;
+      border-bottom: 1px solid var(--borde);
+      background: var(--superficie);
+    }
+
+    .navegacion__marca {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--texto);
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .navegacion__marca .mana {
+      width: 14px;
+      height: 14px;
+    }
+
+    .navegacion__enlaces {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .navegacion__enlace {
+      color: var(--texto-suave);
+      font-size: 15px;
+      text-decoration: none;
+    }
+
+    .navegacion__enlace[aria-current="page"] {
+      color: var(--texto);
+    }
+
+    /* Solo para organizar esta demostración */
+    .muestra {
+      display: grid;
+      gap: 32px;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 32px 24px;
+    }
+
+    .muestra__grupo {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      min-width: 0;
+    }
+
+    .muestra__titulo {
+      margin: 0 0 12px;
+      padding: 0;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    @media (max-width: 600px) {
+      .navegacion {
+        flex-wrap: wrap;
+        padding: 16px 24px;
+      }
+    }
